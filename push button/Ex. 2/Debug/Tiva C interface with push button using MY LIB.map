@@ -1,0 +1,219 @@
+******************************************************************************
+                  TI ARM Linker PC v20.2.7                     
+******************************************************************************
+>> Linked Tue Mar 14 00:51:33 2023
+
+OUTPUT FILE NAME:   <Tiva C interface with push button using MY LIB.out>
+ENTRY POINT SYMBOL: "_c_int00_noinit_noargs"  address: 00000bf5
+
+
+MEMORY CONFIGURATION
+
+         name            origin    length      used     unused   attr    fill
+----------------------  --------  ---------  --------  --------  ----  --------
+  FLASH                 00000000   00040000  00000d06  0003f2fa  R  X
+  SRAM                  20000000   00008000  00000200  00007e00  RW X
+
+
+SEGMENT ALLOCATION MAP
+
+run origin  load origin   length   init length attrs members
+----------  ----------- ---------- ----------- ----- -------
+00000000    00000000    00000d08   00000d08    r-x
+  00000000    00000000    0000026c   0000026c    r-- .intvecs
+  0000026c    0000026c    00000a2e   00000a2e    r-x .text
+  00000c9c    00000c9c    0000006c   0000006c    r-- .const
+20000000    20000000    00000200   00000000    rw-
+  20000000    20000000    00000200   00000000    rw- .stack
+
+
+SECTION ALLOCATION MAP
+
+ output                                  attributes/
+section   page    origin      length       input sections
+--------  ----  ----------  ----------   ----------------
+.intvecs   0    00000000    0000026c     
+                  00000000    0000026c     tm4c123gh6pm_startup_ccs.obj (.intvecs)
+
+.text      0    0000026c    00000a2e     
+                  0000026c    0000017c     pin.lib : pin.obj (.text)
+                  000003e8    0000016c     driverlib.lib : gpio.obj (.text:GPIOPadConfigSet)
+                  00000554    00000136     rtsv7M4_T_le_v4SPD16_eabi.lib : fd_div_t2.asm.obj (.text)
+                  0000068a    00000002     --HOLE-- [fill = 0]
+                  0000068c    00000118     driverlib.lib : sysctl.obj (.text:SysCtlClockGet)
+                  000007a4    000000fc     rtsv7M4_T_le_v4SPD16_eabi.lib : fd_mul_t2.asm.obj (.text)
+                  000008a0    000000f4     driverlib.lib : sysctl.obj (.text:SysCtlClockSet)
+                  00000994    000000bc     Tiva C interface with push button using MYLIB.obj (.text)
+                  00000a50    00000090     delay.lib : delay.obj (.text)
+                  00000ae0    00000044     rtsv7M4_T_le_v4SPD16_eabi.lib : fd_tou_t2.asm.obj (.text)
+                  00000b24    00000038     driverlib.lib : sysctl.obj (.text:SysCtlPeripheralReady)
+                  00000b5c    00000038     rtsv7M4_T_le_v4SPD16_eabi.lib : fs_tod_t2.asm.obj (.text)
+                  00000b94    00000034     driverlib.lib : sysctl.obj (.text:SysCtlPeripheralEnable)
+                  00000bc8    0000002c                   : gpio.obj (.text:GPIODirModeSet)
+                  00000bf4    0000002c     rtsv7M4_T_le_v4SPD16_eabi.lib : boot_cortex_m.c.obj (.text:_c_int00_noinit_noargs:_c_int00_noinit_noargs)
+                  00000c20    00000020                                   : u_tofd_t2.asm.obj (.text)
+                  00000c40    0000001c     driverlib.lib : sysctl.obj (.text:SysCtlGPIOAHBEnable)
+                  00000c5c    00000018                   : gpio.obj (.text:GPIOUnlockPin)
+                  00000c74    0000000c     tm4c123gh6pm_startup_ccs.obj (.text)
+                  00000c80    00000006     driverlib.lib : gpio.obj (.text:GPIOPinRead)
+                  00000c86    00000006                   : gpio.obj (.text:GPIOPinWrite)
+                  00000c8c    00000006                   : sysctl.obj (.text:SysCtlDelay)
+                  00000c92    00000004     rtsv7M4_T_le_v4SPD16_eabi.lib : pre_init.c.obj (.text:_system_pre_init)
+                  00000c96    00000004                                   : exit.c.obj (.text:abort:abort)
+
+.const     0    00000c9c    0000006c     
+                  00000c9c    0000006c     driverlib.lib : sysctl.obj (.const:g_pui32Xtals)
+
+.cinit     0    00000000    00000000     UNINITIALIZED
+
+.init_array 
+*          0    00000000    00000000     UNINITIALIZED
+
+.stack     0    20000000    00000200     UNINITIALIZED
+                  20000000    00000004     rtsv7M4_T_le_v4SPD16_eabi.lib : boot_cortex_m.c.obj (.stack)
+                  20000004    000001fc     --HOLE--
+
+__llvm_prf_cnts 
+*          0    20000000    00000000     UNINITIALIZED
+
+MODULE SUMMARY
+
+       Module                                              code   ro data   rw data
+       ------                                              ----   -------   -------
+    .\
+       tm4c123gh6pm_startup_ccs.obj                        12     620       0      
+       Tiva C interface with push button using MYLIB.obj   188    0         0      
+    +--+---------------------------------------------------+------+---------+---------+
+       Total:                                              200    620       0      
+                                                                                   
+    C:/Users/ibrah/Desktop/Tivaware Projects/MyLib/delay/Debug/delay.lib
+       delay.obj                                           144    0         0      
+    +--+---------------------------------------------------+------+---------+---------+
+       Total:                                              144    0         0      
+                                                                                   
+    C:/Users/ibrah/Desktop/Tivaware Projects/MyLib/pin/Debug/pin.lib
+       pin.obj                                             380    0         0      
+    +--+---------------------------------------------------+------+---------+---------+
+       Total:                                              380    0         0      
+                                                                                   
+    C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib
+       sysctl.obj                                          666    108       0      
+       gpio.obj                                            444    0         0      
+    +--+---------------------------------------------------+------+---------+---------+
+       Total:                                              1110   108       0      
+                                                                                   
+    C:\ti\ccs1220\ccs\tools\compiler\ti-cgt-arm_20.2.7.LTS\lib\rtsv7M4_T_le_v4SPD16_eabi.lib
+       fd_div_t2.asm.obj                                   310    0         0      
+       fd_mul_t2.asm.obj                                   252    0         0      
+       fd_tou_t2.asm.obj                                   68     0         0      
+       fs_tod_t2.asm.obj                                   56     0         0      
+       boot_cortex_m.c.obj                                 44     0         0      
+       u_tofd_t2.asm.obj                                   32     0         0      
+       exit.c.obj                                          4      0         0      
+       pre_init.c.obj                                      4      0         0      
+    +--+---------------------------------------------------+------+---------+---------+
+       Total:                                              770    0         0      
+                                                                                   
+       Stack:                                              0      0         512    
+    +--+---------------------------------------------------+------+---------+---------+
+       Grand Total:                                        2604   728       512    
+
+
+GLOBAL SYMBOLS: SORTED ALPHABETICALLY BY Name 
+
+address   name                   
+-------   ----                   
+00000c97  C$$EXIT                
+00000a51  DelayMs                
+00000a91  DelayUs                
+00000bc9  GPIODirModeSet         
+000003e9  GPIOPadConfigSet       
+00000c81  GPIOPinRead            
+00000c87  GPIOPinWrite           
+00000c5d  GPIOUnlockPin          
+0000026d  Pin_Init               
+00000395  Pin_Read               
+00000327  Pin_Write              
+00000c75  ResetISR               
+00000a3d  Set_Clock_80           
+0000068d  SysCtlClockGet         
+000008a1  SysCtlClockSet         
+00000c8d  SysCtlDelay            
+00000c41  SysCtlGPIOAHBEnable    
+00000b95  SysCtlPeripheralEnable 
+00000b25  SysCtlPeripheralReady  
+20000200  __STACK_END            
+00000200  __STACK_SIZE           
+20000200  __STACK_TOP            
+ffffffff  __TI_pprof_out_hndl    
+ffffffff  __TI_prof_data_size    
+ffffffff  __TI_prof_data_start   
+00000000  __TI_static_base__     
+00000ae1  __aeabi_d2uiz          
+00000555  __aeabi_ddiv           
+000007a5  __aeabi_dmul           
+00000b5d  __aeabi_f2d            
+00000c21  __aeabi_ui2d           
+ffffffff  __binit__              
+ffffffff  __c_args__             
+UNDEFED   __mpu_init             
+20000000  __stack                
+20000000  __start___llvm_prf_cnts
+20000000  __stop___llvm_prf_cnts 
+00000bf5  _c_int00_noinit_noargs 
+00000c93  _system_pre_init       
+00000c97  abort                  
+ffffffff  binit                  
+00000000  g_pfnVectors           
+00000995  main                   
+
+
+GLOBAL SYMBOLS: SORTED BY Symbol Address 
+
+address   name                   
+-------   ----                   
+00000000  __TI_static_base__     
+00000000  g_pfnVectors           
+00000200  __STACK_SIZE           
+0000026d  Pin_Init               
+00000327  Pin_Write              
+00000395  Pin_Read               
+000003e9  GPIOPadConfigSet       
+00000555  __aeabi_ddiv           
+0000068d  SysCtlClockGet         
+000007a5  __aeabi_dmul           
+000008a1  SysCtlClockSet         
+00000995  main                   
+00000a3d  Set_Clock_80           
+00000a51  DelayMs                
+00000a91  DelayUs                
+00000ae1  __aeabi_d2uiz          
+00000b25  SysCtlPeripheralReady  
+00000b5d  __aeabi_f2d            
+00000b95  SysCtlPeripheralEnable 
+00000bc9  GPIODirModeSet         
+00000bf5  _c_int00_noinit_noargs 
+00000c21  __aeabi_ui2d           
+00000c41  SysCtlGPIOAHBEnable    
+00000c5d  GPIOUnlockPin          
+00000c75  ResetISR               
+00000c81  GPIOPinRead            
+00000c87  GPIOPinWrite           
+00000c8d  SysCtlDelay            
+00000c93  _system_pre_init       
+00000c97  C$$EXIT                
+00000c97  abort                  
+20000000  __stack                
+20000000  __start___llvm_prf_cnts
+20000000  __stop___llvm_prf_cnts 
+20000200  __STACK_END            
+20000200  __STACK_TOP            
+ffffffff  __TI_pprof_out_hndl    
+ffffffff  __TI_prof_data_size    
+ffffffff  __TI_prof_data_start   
+ffffffff  __binit__              
+ffffffff  __c_args__             
+ffffffff  binit                  
+UNDEFED   __mpu_init             
+
+[43 symbols]

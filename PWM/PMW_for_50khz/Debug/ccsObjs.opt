@@ -1,0 +1,6 @@
+"./PMW_for_50khz.obj"
+"./tm4c123gh6pm_startup_ccs.obj"
+"../tm4c123gh6pm.cmd"
+-llibc.a
+-l"C:/Users/ibrah/Desktop/Tivaware Projects/MyLib/pin/Debug/pin.lib"
+-l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib"
